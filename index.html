@@ -1,57 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohit Dubey</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Dubey — Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Rohit Dubey</h1>
-  <p class="subtitle">
-    B.Tech CSE (AI & ML) · Building practical Chrome extensions
-  </p>
+  <main class="system">
 
-  <nav>
-    <a href="Rohit_Dubey_Resume.pdf" target="_blank">Resume</a>
-    <a href="https://github.com/anakinskywalker0903" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/rohit-dubey-41191319a" target="_blank">LinkedIn</a>
-  </nav>
-</header>
+    <!-- HERO -->
+    <section class="panel hero">
+      <p class="system-line">SYSTEM ONLINE</p>
+      <h1>Rohit Dubey</h1>
+      <h2>Computer Science · Chrome Extensions · AI Tools</h2>
+    </section>
 
-<main>
-  <section>
-    <h2>Projects</h2>
-
-    <article>
-      <h3>NoteLift — Chrome Extension</h3>
+    <!-- ABOUT -->
+    <section class="panel about">
+      <h3>Overview</h3>
       <p>
-        Converts highlighted text from web pages and PDFs into clean,
-        module-wise revision notes using local-only storage. No backend
-        or external APIs.
+        Computer Science student focused on building practical,
+        performance-oriented tools and AI-based systems.
+        Interested in client-side engineering, system design,
+        and usable automation.
       </p>
-    </article>
+    </section>
 
-    <article>
-      <h3>InstaSave Navigator</h3>
+    <!-- PROJECTS -->
+    <section class="panel projects">
+      <h3>Projects</h3>
+
+      <!-- NoteLift -->
+      <div class="project-card">
+        <div class="project-header">
+          <h4>NoteLift</h4>
+          <span class="tag">Chrome Extension</span>
+        </div>
+
+        <p class="project-summary">
+          Converts highlighted web content and PDFs into structured revision notes.
+        </p>
+
+        <button class="toggle-btn">Expand</button>
+
+        <div class="project-details">
+          <p>
+            Designed as a fully local Chrome extension using Manifest V3.
+            Emphasizes privacy-first storage, fast processing, and
+            module-wise organization for academic revision.
+          </p>
+          <p>
+            Supports one-click exports and efficient note reuse
+            without external servers or cloud dependencies.
+          </p>
+          <p class="stack">JavaScript · Chrome Extensions API · Local Storage</p>
+        </div>
+      </div>
+
+      <!-- InstaSave Navigator -->
+      <div class="project-card">
+        <div class="project-header">
+          <h4>InstaSave Navigator</h4>
+          <span class="tag">Chrome Extension</span>
+        </div>
+
+        <p class="project-summary">
+          Instantly navigates to the oldest saved Instagram posts.
+        </p>
+
+        <button class="toggle-btn">Expand</button>
+
+        <div class="project-details">
+          <p>
+            Built a high-performance, fully client-side solution
+            using intelligent scrolling and DOM observation.
+            Avoids APIs, automation tools, or rate-limited requests.
+          </p>
+          <p>
+            Optimized for large saved-post libraries with smooth,
+            reliable navigation and minimal memory usage.
+          </p>
+          <p class="stack">JavaScript · DOM Manipulation · Scroll Logic</p>
+        </div>
+      </div>
+
+      <!-- Brainstormzz -->
+      <div class="project-card">
+        <div class="project-header">
+          <h4>Brainstormzz</h4>
+          <span class="tag">AI Tool</span>
+        </div>
+
+        <p class="project-summary">
+          AI-powered brainstorming whiteboard for structured idea generation.
+        </p>
+
+        <button class="toggle-btn">Expand</button>
+
+        <div class="project-details">
+          <p>
+            Interactive HTML5 Canvas-based whiteboard supporting
+            drag-and-drop idea nodes and visual organization.
+            Designed for clarity and fast iteration.
+          </p>
+          <p>
+            Integrates Chrome’s built-in on-device AI (Gemini Nano)
+            to generate ideas locally without external API calls,
+            ensuring privacy and low latency.
+          </p>
+          <p class="stack">HTML5 Canvas · JavaScript · Chrome Built-in AI</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RESUME -->
+    <section class="panel resume">
+      <h3>Resume</h3>
       <p>
-        Chrome extension that navigates instantly to the oldest saved
-        Instagram posts using client-side scrolling.
+        Detailed academic background, technical skills,
+        and project experience.
       </p>
-    </article>
 
-    <article>
-      <h3>Brainstormzz</h3>
-      <p>
-        Visual brainstorming whiteboard built with HTML5 Canvas and
-        Chrome built-in AI APIs.
-      </p>
-    </article>
+      <a
+        class="resume-link"
+        href="resume/Rohit_Dubey_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open Resume (PDF)
+      </a>
+    </section>
 
-  </section>
-</main>
+    <!-- CONTACT -->
+    <section class="panel contact">
+      <h3>Contact</h3>
 
+      <div class="contact-links">
+        <a href="mailto:rohitdubey39005@gmail.com">Email</a>
+
+        <a
+          href="https://github.com/anakinskywalker0903"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/rohit-dubey-41191319a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

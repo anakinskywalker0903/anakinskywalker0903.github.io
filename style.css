@@ -1,60 +1,207 @@
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}.system {
+  position: relative;
+  z-index: 1;
+}
+:root {
+  --bg-main: #0b0e11;
+  --bg-panel: #12161c;
+  --bg-panel-alt: #1a1f26;
+
+  --text-main: #d6d9dd;
+  --text-muted: #8b949e;
+
+  --accent: #4cc9f0;
+  --border-subtle: #262c36;
+
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  background: #ffffff;
-  color: #111;
   margin: 0;
-  padding: 40px 20px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-header {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 40px;
+.system {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
-h1 {
-  font-size: 30px;
-  margin-bottom: 4px;
+.panel {
+  background: linear-gradient(
+    180deg,
+    var(--bg-panel),
+    var(--bg-panel-alt)
+  );
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
 }
 
-.subtitle {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 12px;
+.system-line {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
 }
 
-nav a {
-  margin-right: 14px;
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}.projects h3 {
+  margin-bottom: 24px;
+}
+
+.project-card {
+  border: 1px solid var(--border-subtle);
+  padding: 24px;
+  background: #0f141a;
+  position: relative;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-header h4 {
+  margin: 0;
+}
+
+.tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.project-summary {
+  color: var(--text-muted);
+  margin: 16px 0;
+}
+
+.toggle-btn {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.project-details {
+  margin-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease, opacity 300ms ease;
+  opacity: 0;
+}
+
+.stack {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-left: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.project-card {
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.02),
+    0 20px 40px rgba(0,0,0,0.4);
+}.resume-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
   text-decoration: none;
-  color: #000;
-  border-bottom: 1px solid #000;
+  transition: border-color 200ms ease, color 200ms ease;
 }
 
-nav a:hover {
-  opacity: 0.7;
+.resume-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}.panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(76, 201, 240, 0.05),
+    transparent
+  );
+  transition: left 600ms ease;
+  pointer-events: none;
 }
 
-main {
-  max-width: 700px;
-  margin: auto;
+.panel:hover::after {
+  left: 100%;
+}.project-card {
+  transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
-h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.03),
+    0 30px 60px rgba(0,0,0,0.6);
+}.panel h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}.panel {
+  position: relative;
 }
 
-article {
-  margin-bottom: 22px;
-}
-
-h3 {
-  margin-bottom: 6px;
-  font-size: 17px;
-}
-
-p {
-  margin: 0;
-  line-height: 1.5;
-  color: #333;
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.6;
+}.system-line::before {
+  content: "●";
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 0.6rem;
+}.projects,
+.resume,
+.contact {
+  margin-left: 40px;
 }
